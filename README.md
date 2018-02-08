@@ -15,13 +15,13 @@ For example; you might be curious about Game of Thrones’s new episode and you 
  - Status column has POSITIVE, NEUTRAL or NEGATIVE that change according to avg(senti_val) column in real-time.
  
 # Running
-Create Twitter API account and get keys for twitter_config.py
+1. Create Twitter API account and get keys for twitter_config.py
 
-Start Apache Kafka
-/bin/kafka-server-start.sh /config/server.properties
+2. Start Apache Kafka
+			/bin/kafka-server-start.sh /config/server.properties
 
-Run tweet_listener.py with Python version 3 and desired topic name. 
-PYSPARK_PYTHON=python3 bin/spark-submit tweet_listener.py "Game of Thrones"
+3. Run tweet_listener.py with Python version 3 and desired topic name. 
+			PYSPARK_PYTHON=python3 bin/spark-submit tweet_listener.py "Game of Thrones"
 
-Run twitter_topic_avg_sentiment_val.py with Python version 3.
-PYSPARK_PYTHON=python3 bin/spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.1.1 twitter_topic_avg_sentiment_val.py
+4. Run twitter_topic_avg_sentiment_val.py with Python version 3.
+			PYSPARK_PYTHON=python3 bin/spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.1.1 twitter_topic_avg_sentiment_val.py
